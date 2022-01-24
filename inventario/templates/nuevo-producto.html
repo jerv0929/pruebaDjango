@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Catálogo {% endblock %}
+
+{% block subtitle %} REGISTRO DE UN NUEVO PORDUCTO {% endblock %}
+
+{% block description %}Bienvenido{% endblock %}
+
+{% block content %}
+
+
+<section class="py-5">
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <form action="/nuevo-producto/" method="POST">{% csrf_token %}
+        
+            <div class="col-9 md-9" >
+                <label for="">Referencia: </label>
+                <input type="text" name="ref">
+            </div><br>
+            <div class="col-9 md-9" >
+                <label for="">Categoria: </label>
+                <input type="text" name="cat">
+            </div><br>
+            <div class="col-9 md-9" >
+                <label for="">Descripción: </label>
+                <input type="text" name="des">
+            </div><br>
+            <div class="col-9 md-9" >
+                <label for="">Precio: </label>
+                <input type="text" name="pre">
+            </div><br>
+            <div class="col-9 md-9" >
+                <label for="">Cantidad: </label>
+                <input type="text" name="can">
+            </div><br><br>
+            
+            <input class="btn btn-outline-success" type="submit" value="enviar" name="enviar">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-outline-danger" href="/inicio">cancelar</a>
+        </form>
+    
+    </div>
+</div>
+</section>  
+{% endblock %}

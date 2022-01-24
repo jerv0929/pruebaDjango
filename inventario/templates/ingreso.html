@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Inicio {% endblock %}
+{% block subtitle %} B &nbsp;&nbsp;&nbsp;&nbsp; A &nbsp;&nbsp;&nbsp;&nbsp; R &nbsp;&nbsp;&nbsp;&nbsp; Ó {% endblock %}
+{% block description %}Conoce Nuestros Productos{% endblock %}
+
+
+{% block content %}
+
+
+<div class="login-window" id="login-window">
+
+    <div class="content">
+        <h3>INGRESO:</h3>
+        <hr>
+        <form action="/ingreso/" method="POST"> {% csrf_token %}
+
+            <div class="row mb-3">
+                <div class="col-12 md-12">
+                    <label for="">Usuario:</label>
+                </div>
+                <div class="col-6 md-6">
+                    <input type="text" name="user">
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row mb-3"> 
+                <div class="row"></div>
+                    <div class="col-12 md-12">
+                        <label for="">Contraseña:</label>
+                    </div>
+                    <div class="col-6 md-6">
+                        <input type="password" name="pass" >
+                    </div>
+
+                    <div class="col-6 md-6"></div>
+
+                    <div class="container">
+                        <div class="position-relative top-0 start-0">
+                            <p>&nbsp;</p>
+                            <input class="btn btn-outline-success" type="submit" value="enviar" name="enviar">
+                            <label for="">&nbsp;&nbsp;</label>
+                            <a class="btn btn-outline-danger" href="/inicio">cancelar</a>
+                            <hr>
+                            <p>Si no eres usuario registrado, <a href="/registro">Regístrate aquí</a></p>
+                        </div>
+                        
+               
+                    </div> 
+                </div>
+
+            </div>            
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

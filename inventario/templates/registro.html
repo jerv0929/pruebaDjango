@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} Registro {% endblock %}
+
+{% block subtitle %} REGISTRATE {% endblock %}
+
+{% block description %}y estarás actualizado con nuestras nuevas colecciones{% endblock %}
+
+
+{% block content %}
+
+<section class="py-5">
+
+    <div class="content">
+  
+            <form action="/registro/" method="POST"> {% csrf_token %}
+            
+                 <div class="row">
+
+                    <div class="col-6 md-6">
+                        <label for="">Nombres:</label>
+                    </div>
+                    <div class="col-6 md-6">
+                        <input type="text" name="name">
+                    </div>
+
+                    <div class="col-6 md-6">
+                        <label for="">Apellidos:</label>
+                    </div>
+                    <div class="col-6 md-6">
+                        <input type="text" name="subname">
+                    </div>
+
+                    <div class="col-6 md-6">
+                        <label for="">Dirección:</label>
+                    </div>
+                    <div class="col-6 md-6">
+                        <input type="text" name="dir">
+                    </div>
+
+                 </div>   
+        
+            </form>
+        
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
